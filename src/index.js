@@ -25,11 +25,4 @@ exports.max = function max (array) {
   return posMax;
 }
 
-exports.avg = function avg (array) {
-  if (!array || array.length === 0)  {
-    return 0;
-  }
-  return array.reduce((acc, current) => {
-      return acc + current / array.length
-    }) 
-}
+exports.avg = avg = arr => arr && arr.length !== 0 ? arr.reduce((acc, i) => acc + i, 0) / arr.length : 0;
